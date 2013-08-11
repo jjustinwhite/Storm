@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Storm</title>
+  <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +10,7 @@
 <body>
 
 <%= yield %>
-
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </body>
 </html>

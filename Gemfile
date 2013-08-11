@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+#Weather_Forecast retrieves JSON from the forecast.io weather API.
+gem 'weather_forecast'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
