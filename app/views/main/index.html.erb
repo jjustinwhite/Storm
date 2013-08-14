@@ -5,8 +5,12 @@
           <h1>Where's the Storm?</h1>
         </div>
         <p class="lead">Where's the Storm is a simple web app that tells you when the next storm is coming.</p>
+        <h3>Current Weather</h3>
+        <p class="lead">The current time is <%=@time %> </p>
+        <p class="lead">The weather outside is <%=@summary%>.</p>
+        <p class="lead">The icon for the weather shold be this [<%=@icon%>].</p>
       </div>
       <div id="push"></div>
     </div>
 
-<h1><%= @weather_json %></h1>
+<h1><%= @weather_json["currently"] %></h1>
