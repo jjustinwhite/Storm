@@ -47,34 +47,20 @@ class MainController < ApplicationController
 		end
 	end
 
+	def get_temperature_info(temp)
+		temp = temp.round
+		return temp
+	end
+
 	def index
 		@hi = Weather_Forecast.hi
-		@weather_json = Weather_Forecast.get_forecast(41.9278,-87.6520)
+		@weather_json = Weather_Forecast.get_forecast(41.9278, -87.6520)
 		@time = Time.at(@weather_json["currently"]["time"])
 		@summary = get_summary_description(@weather_json["currently"]["summary"])
 		@icon = get_weather_image(@weather_json["currently"]["icon"])
+		@temp = get_temperature_info(@weather_json["currently"]["temperature"])
+		@precip = 100 * @weather_json["currently"]["precipProbability"]
+		@intensity = 100 * @weather_json["currently"]["precipIntensity"]
+		@wind= @weather_json["currently"]["windSpeed"]
 	end
 end
-
-
-		#if icon == "clear-day"
-		#	return "CLEAR_DAY"
-		#elseif icon == "clear-night"
-		#	return "CLEAR_NIGHT"
-		#elseif icon == "partly-cloudy-day"
-		#	return "PARTLY_CLOUDY_DAY"
-		#elseif icon == "partly-cloudy-night"
-		#	return "PARTLY_CLOUDY_NIGHT"
-		#elseif icon == "cloudy"
-		#	return "CLOUDY"
-		#elseif icon == "rain"
-		#	return "RAIN"
-		#elseif icon == "sleet"
-		#	return "SLEET"
-		#elseif icon == "snow"
-		#	return "SNOW"
-		#elseif icon == "wind"
-		#	return "WIND"
-		#elseif icon == "fog"
-		#	return "FOG"
-		#end
