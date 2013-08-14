@@ -4,8 +4,8 @@ require 'Time'
 
 class MainController < ApplicationController
 
-	@chi_lat = -41.8819
-	@chi_long = 87.6500
+	@chi_lat = 41.9278
+	@chi_long = -87.6520
 
 	def get_summary_description(summary)
 		#Placeholder method. Fill In.
@@ -49,7 +49,7 @@ class MainController < ApplicationController
 
 	def index
 		@hi = Weather_Forecast.hi
-		@weather_json = Weather_Forecast.get_forecast(-41.8819, 87.6500)
+		@weather_json = Weather_Forecast.get_forecast(41.9278,-87.6520)
 		@time = Time.at(@weather_json["currently"]["time"])
 		@summary = get_summary_description(@weather_json["currently"]["summary"])
 		@icon = get_weather_image(@weather_json["currently"]["icon"])
