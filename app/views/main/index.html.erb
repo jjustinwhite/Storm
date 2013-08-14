@@ -9,8 +9,19 @@
         <p class="lead">The current time is <%=@time %> </p>
         <p class="lead">The weather outside is <%=@summary%>.</p>
         <p class="lead">The icon for the weather shold be this [<%=@icon%>].</p>
+        <canvas id="icon1" width="164" height="164"></canvas>
       </div>
       <div id="push"></div>
     </div>
 
+
 <h1><%= @weather_json["currently"] %></h1>
+
+
+<!--JS Code for Skycons -->
+<%= javascript_tag do %>
+  var skycons = new Skycons({"color": "#89CFF0"});
+  skycons.add("icon1", Skycons.<%=@icon%>);
+  skycons.play();
+<% end %>
+

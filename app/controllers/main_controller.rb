@@ -14,10 +14,37 @@ class MainController < ApplicationController
 	end
 
 	def get_weather_image(icon)
-		#Placeholder method. Fill In.
-		#Take in the string of what Icon it is, ex. cloudy
-		#Then return the name of the image file that we have in our rails app(Need to find icons)
-		return icon
+		#I couldn't get my elseif statements to work... sorry for the 10 if statements. lets combine them into an elseif 
+		if icon == "clear-day"
+			return "CLEAR_DAY"
+		end
+		if icon == "clear-night"
+			return "CLEAR_NIGHT"
+		end
+		if icon == "partly-cloudy-day"
+			return "PARTLY_CLOUDY_DAY"
+		end
+		if icon == "partly-cloudy-night"
+			return "PARTLY_CLOUDY_NIGHT"
+		end
+		if icon == "cloudy"
+			return "CLOUDY"
+		end
+		if icon == "rain"
+			return "RAIN"
+		end
+		if icon == "sleet"
+			return "SLEET"
+		end
+		if icon == "snow"
+			return "SNOW"
+		end
+		if icon == "wind"
+			return "WIND"
+		end
+		if icon == "fog"
+			return "FOG"
+		end
 	end
 
 	def index
@@ -28,3 +55,26 @@ class MainController < ApplicationController
 		@icon = get_weather_image(@weather_json["currently"]["icon"])
 	end
 end
+
+
+		#if icon == "clear-day"
+		#	return "CLEAR_DAY"
+		#elseif icon == "clear-night"
+		#	return "CLEAR_NIGHT"
+		#elseif icon == "partly-cloudy-day"
+		#	return "PARTLY_CLOUDY_DAY"
+		#elseif icon == "partly-cloudy-night"
+		#	return "PARTLY_CLOUDY_NIGHT"
+		#elseif icon == "cloudy"
+		#	return "CLOUDY"
+		#elseif icon == "rain"
+		#	return "RAIN"
+		#elseif icon == "sleet"
+		#	return "SLEET"
+		#elseif icon == "snow"
+		#	return "SNOW"
+		#elseif icon == "wind"
+		#	return "WIND"
+		#elseif icon == "fog"
+		#	return "FOG"
+		#end
