@@ -1,11 +1,19 @@
 require 'weather_forecast'
 require 'Time'
+#require 'geocoder'
 
 
 class MainController < ApplicationController
 
-	@chi_lat = 41.9278
-	@chi_long = -87.6520
+	skip_before_filter :verify_authenticity_token 
+
+	@latitude = 41.9278
+	@longitude = -87.6520
+
+	class << self
+		attr_accessor :latitude, :longitude 
+	end
+	
 
 	def get_summary_description(summary)
 		#Placeholder method. Fill In.
@@ -62,5 +70,30 @@ class MainController < ApplicationController
 		@precip = 100 * @weather_json["currently"]["precipProbability"]
 		@intensity = 100 * @weather_json["currently"]["precipIntensity"]
 		@wind= @weather_json["currently"]["windSpeed"]
+	end
+
+	def get_forecast
+		#x = reverse_geocoded_by MainController.latitude, MainController.longitude
+		#after_validation :reverse_geocode
+		#puts "THIS HASH"
+		#puts x
+
+		@weather_json = Weather_Forecast.get_forecast(MainController.latitude, MainController.longitude)
+		@time = Time.at(@weather_json["currently"]["time"])
+		@summary = get_summary_description(@weather_json["currently"]["summary"])
+		@icon = get_weather_image(@weather_json["currently"]["icon"])
+		@temp = get_temperature_info(@weather_json["currently"]["temperature"])
+		@precip = 100 * @weather_json["currently"]["precipProbability"]
+		@intensity = 100 * @weather_json["currently"]["precipIntensity"]
+		@wind= @weather_json["currently"]["windSpeed"]
+	end
+
+	def create
+		#render text: params[:post].inspect
+		puts "PARAMS"
+		puts params.inspect
+		MainController.latitude = params[:latitude]
+		MainController.longitude = params[:longitude]
+		redirect_to :get_forecast
 	end
 end
