@@ -1,5 +1,8 @@
 Storm::Application.routes.draw do
   root 'main#index'
+
+  post '/get_forecast/(.:format)' => 'main#create'
+  get '/get_forecast' => 'main#get_forecast', as: :get_forecast
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
