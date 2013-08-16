@@ -1,4 +1,6 @@
 Storm::Application.routes.draw do
+  resources :locations
+
   root 'main#index'
 
   post '/get_forecast/(.:format)' => 'main#create'
