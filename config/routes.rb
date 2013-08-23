@@ -1,7 +1,9 @@
 Storm::Application.routes.draw do
   resources :locations
 
-  root 'main#index'
+  #root 'main#index'
+  root 'main#home'
+  get '/default' => 'main#index', as: :default
 
   post '/get_forecast/(.:format)' => 'main#create'
   get '/get_forecast' => 'main#get_forecast', as: :get_forecast

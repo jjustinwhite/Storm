@@ -90,8 +90,8 @@ class MainController < ApplicationController
 
 	def create
 		#render text: params[:post].inspect
-		puts "PARAMS"
-		puts params.inspect
+		#puts "PARAMS"
+		#puts params.inspect
 		MainController.latitude = params[:latitude]
 		MainController.longitude = params[:longitude]
 		redirect_to :get_forecast

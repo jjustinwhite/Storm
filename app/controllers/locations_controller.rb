@@ -1,3 +1,6 @@
+require 'weather_forecast'
+require 'Time'
+
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
 
@@ -7,9 +10,62 @@ class LocationsController < ApplicationController
     @locations = Location.all
   end
 
+  def get_summary_description(summary)
+    #Placeholder method. Fill In.
+    #Check which summary it is and return correct description
+    return summary
+  end
+
+  def get_weather_image(icon)
+    #I couldn't get my elseif statements to work... sorry for the 10 if statements. lets combine them into an elseif 
+    if icon == "clear-day"
+      return "CLEAR_DAY"
+    end
+    if icon == "clear-night"
+      return "CLEAR_NIGHT"
+    end
+    if icon == "partly-cloudy-day"
+      return "PARTLY_CLOUDY_DAY"
+    end
+    if icon == "partly-cloudy-night"
+      return "PARTLY_CLOUDY_NIGHT"
+    end
+    if icon == "cloudy"
+      return "CLOUDY"
+    end
+    if icon == "rain"
+      return "RAIN"
+    end
+    if icon == "sleet"
+      return "SLEET"
+    end
+    if icon == "snow"
+      return "SNOW"
+    end
+    if icon == "wind"
+      return "WIND"
+    end
+    if icon == "fog"
+      return "FOG"
+    end
+  end
+
+  def get_temperature_info(temp)
+    temp = temp.round
+    return temp
+  end
+
   # GET /locations/1
   # GET /locations/1.json
   def show
+    @weather_json = Weather_Forecast.get_forecast(@location.latitude, @location.longitude)
+    @time = Time.at(@weather_json["currently"]["time"])
+    @summary = get_summary_description(@weather_json["currently"]["summary"])
+    @icon = get_weather_image(@weather_json["currently"]["icon"])
+    @temp = get_temperature_info(@weather_json["currently"]["temperature"])
+    @precip = 100 * @weather_json["currently"]["precipProbability"]
+    @intensity = 100 * @weather_json["currently"]["precipIntensity"]
+    @wind= @weather_json["currently"]["windSpeed"]
   end
 
   # GET /locations/new

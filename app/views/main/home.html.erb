@@ -1,0 +1,13 @@
+<h1>Where is the Storm?</h1>
+
+<p>
+<%= form_tag("/#", method: "get") do %>
+  <%= label_tag(:q, "Enter your location:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+</p>
+
+<%= link_to 'Find your location now!', new_location_path %>
+
+<p><%= link_to "Home", default_path%></p>

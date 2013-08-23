@@ -1,19 +1,39 @@
-<p id="notice"><%= notice %></p>
+<div id="wrap">
+  <!-- Begin page content -->
+  <div class="container">
+    <div class="page-header">
+      <h1>Where's the Storm?</h1>
+    </div>
+    <p class="lead">Where's the Storm is a simple web app that tells you when the next storm is coming.</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @location.address %>
-</p>
+    
+<!-- Hero Unit to display weather info -->
+    <div class="hero-unit">
+      <h1>Current Weather</h1>
+      <p class="lead">The current time at <%=@location.address%> is <%=@time %>. </p>
+      <p>
+        <ul class="inline">
+          <li> <class="lead"><canvas id="icon1" width="164" height="164"></canvas></li>
+          <li><dl class="dl-horizontal">
+            <dd><h1><%=@temp%>°</h1></dd>
+            <dt>Condition:</dt> <dd><%=@summary%></dd>
+            <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
+            <dt>Precip. Intensity:</dt> <dd> <%=@intensity%></dd>
+            <dt>Wind Speed:</dt> <dd> <%=@wind.to_i%> mph</dd>
+          </dl></li>
+        </ul>
+        <a class="btn btn-primary btn-large">Learn more</a>
+      </p>
+    </div>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @location.latitude %>
-</p>
+  </div>
+  <div id="push"></div>
+</div>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @location.longitude %>
-</p>
 
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<!--JS Code for Skycons -->
+<%= javascript_tag do %>
+  var skycons = new Skycons({"color": "#89CFF0"});
+  skycons.add("icon1", Skycons.<%=@icon%>);
+  skycons.play();
+<% end %>
