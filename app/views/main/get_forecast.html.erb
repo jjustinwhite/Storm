@@ -4,16 +4,18 @@
         <div class="page-header">
           <h1>Where's the Storm?</h1>
         </div>
+        <p class="lead">Where's the Storm is a simple web app that tells you when the next storm is coming.</p>
 
         <form class="form-inline" accept-charset="UTF-8" action="/get_forecast" method="post">
-          <input type="number" class="input-small" placeholder="Latitude" name="latitude">
-          <input type="number" class="input-small" placeholder="Longitude" name="longitude">
+          <input type="text" class="input-small" placeholder="Latitude" name="latitude">
+          <input type="text" class="input-small" placeholder="Longitude" name="longitude">
           <button type="submit" class="btn">Go!</button>
         </form>
 
         <div class="hero-unit">
           <h1>Current Weather</h1>
-          <p class="lead">The current time in Chicago, IL is <%=@time %> </p>
+          <p class="lead">The current time in <%= @weather_json["timezone"] %> is <%=@time %> </p>
+          <p class="lead">Latitude: <%= @weather_json["latitude"] %> || Longitude: <%= @weather_json["longitude"] %>  </p>
           <p>
             <ul class="inline">
               <li> <class="lead"><canvas id="icon1" width="164" height="164"></canvas></li>
@@ -35,6 +37,8 @@
 
 
 <pre class="pre-scrollable"><%= @weather_json["currently"] %></pre>
+<pre class="pre-scrollable"><%= @weather_json[""] %></pre>
+<pre class="pre-scrollable"><%= @weather_json["timezone"] %></pre>
 
 
 <!--JS Code for Skycons -->

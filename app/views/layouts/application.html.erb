@@ -76,15 +76,29 @@
                     <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
                                    <link rel="shortcut icon" href="../assets/ico/favicon.png">
 </head>
-<body>
 
+
+<body>
     <div id="wrap">
-      <!-- Begin page content -->
-      <div class="container">
-        <%= yield %>
+
+      <div class="navbar">
+        <div class="navbar-inner">
+          <a class="brand" href="/">Where's the Storm?</a>
+        </div>
       </div>
+
+
+      <div class="container well">
+
+
+
+
+        <%= yield %>
+
+    </div>
       <div id="push"></div>
     </div>
+
 
 
     <div id="footer">

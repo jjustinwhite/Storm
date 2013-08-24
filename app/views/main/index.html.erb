@@ -1,44 +1,31 @@
     <div id="wrap">
       <!-- Begin page content -->
+
       <div class="container">
         <div class="page-header">
           <h1>Where's the Storm?</h1>
         </div>
         <p class="lead">Where's the Storm is a simple web app that tells you when the next storm is coming.</p>
 
-        
+  <!--- Search Form -->
+        <form class="form-search">
+          <input type="text" class="input-medium search-query" name="city">
+          <button type="submit" class="btn">Search</button>
+        </form>
+
   <!--- Lat/Long Form -->
         <form class="form-inline" accept-charset="UTF-8" action="/get_forecast" method="post">
-          <input type="number" class="input-small" placeholder="Latitude" name="latitude">
-          <input type="number" class="input-small" placeholder="Longitude" name="longitude">
+        <!-- Lat Long -->
+          <input type="text" class="input-small" placeholder="Latitude" name="latitude">
+          <input type="text" class="input-small" placeholder="Longitude" name="longitude">
           <button type="submit" class="btn">Go!</button>
         </form>
 
-  <!-- Hero Unit to display weather info -->
-        <div class="hero-unit">
-          <h1>Current Weather</h1>
-          <p class="lead">The current time in Chicago, IL is <%=@time %> </p>
-          <p>
-            <ul class="inline">
-              <li> <class="lead"><canvas id="icon1" width="164" height="164"></canvas></li>
-              <li><dl class="dl-horizontal">
-                <dd><h1><%=@temp%>°</h1></dd>
-                <dt>Condition:</dt> <dd><%=@summary%></dd>
-                <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
-                <dt>Precip. Intensity:</dt> <dd> <%=@intensity%></dd>
-                <dt>Wind Speed:</dt> <dd> <%=@wind.to_i%> mph</dd>
-              </dl></li>
-            </ul>
-            <a class="btn btn-primary btn-large">Learn more</a>
-          </p>
-        </div>
 
       </div>
       <div id="push"></div>
     </div>
 
-    <!-- Weather API data -->
-<pre class="pre-scrollable"><%= @weather_json["currently"] %></pre>
 
 
 <!--JS Code for Skycons -->
