@@ -5,6 +5,7 @@ gem 'weather_forecast'
 gem 'httparty'
 gem 'geocoder'
 gem 'protected_attributes'
+gem 'gmaps4rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'

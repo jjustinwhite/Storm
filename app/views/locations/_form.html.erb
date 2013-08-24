@@ -1,4 +1,4 @@
-<%= form_for(@location) do |f| %>
+<%= form_for(@location, :html => {:class=> "form-horizontal"}) do |f| %>
   <% if @location.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@location.errors.count, "error") %> prohibited this location from being saved:</h2>
@@ -12,21 +12,13 @@
   <% end %>
 
 <p>
-  <div class="field">
-    <%= f.label :address %><br>
-    <p>(You only need to fill in the address if you want)</p>
-    <%= f.text_field :address %>
+  <div class="page-header">
+    <h1>Where's the Storm?</h1>
   </div>
+<p class="lead">Where's the Storm is a simple web app that tells you when the next storm is coming.</p>
   <div class="field">
-    <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
-  </div>
-  <div class="field">
-    <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+    <p>Enter your address, zipcode, or nearby city to find a storm:</p>
+    <%= f.text_field :address %> <%= f.submit %>
   </div>
 </p>
 <% end %>
