@@ -12,9 +12,4 @@
  *= require_tree .
  */
 
- body {
- height: 100%;
- background: url(/assets/storm.jpg) no-repeat;
- background-size: cover;
-}
 

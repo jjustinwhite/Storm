@@ -1,6 +1,6 @@
 <div id="wrap">
   <!-- Begin page content -->
-  <div class="container">
+  <div class="container" id="main-page">
     
 <!-- Hero Unit to display weather info -->
     <div class="hero-unit">
@@ -10,7 +10,7 @@
         <ul class="inline">
           <li> <class="lead"><canvas id="icon1" width="164" height="164"></canvas></li>
           <li><dl class="dl-horizontal">
-            <dd><h1><%=@temp%>°</h1></dd>
+            <dd><h1 id="temp"><%=@temp%>°</h1></dd>
             <dt>Condition:</dt> <dd><%=@summary%></dd>
             <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
             <dt>Precip. Intensity:</dt> <dd> <%=@intensity%></dd>

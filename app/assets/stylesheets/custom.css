@@ -1,0 +1,34 @@
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Coda', Georgia, Times, serif;
+    text-shadow: 5px 5px 5px #ccc;
+    text-align: center;
+}
+p, div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+
+a.brand {
+	font-family:'Kreon';
+}
+
+div.container.well {
+	background: rgba(245, 245, 245, 0.85);
+}
+
+div.hero-unit {
+	background: rgba(245, 245, 245, 0.85);
+}
+
+div#footer {
+	background: rgba(245, 245, 245, 0.95);
+}
+
+div.navbar-inner {
+	background: rgba(245, 245, 245, 0.95);
+}
+
+h1#temp {
+	padding-bottom: 10px;
+}
