@@ -16,45 +16,6 @@ class LocationsController < ApplicationController
     return summary
   end
 
-  def get_weather_image(icon)
-    #I couldn't get my elseif statements to work... sorry for the 10 if statements. lets combine them into an elseif 
-    if icon == "clear-day"
-      return "CLEAR_DAY"
-    end
-    if icon == "clear-night"
-      return "CLEAR_NIGHT"
-    end
-    if icon == "partly-cloudy-day"
-      return "PARTLY_CLOUDY_DAY"
-    end
-    if icon == "partly-cloudy-night"
-      return "PARTLY_CLOUDY_NIGHT"
-    end
-    if icon == "cloudy"
-      return "CLOUDY"
-    end
-    if icon == "rain"
-      return "RAIN"
-    end
-    if icon == "sleet"
-      return "SLEET"
-    end
-    if icon == "snow"
-      return "SNOW"
-    end
-    if icon == "wind"
-      return "WIND"
-    end
-    if icon == "fog"
-      return "FOG"
-    end
-  end
-
-  def get_temperature_info(temp)
-    temp = temp.round
-    return temp
-  end
-
   # GET /locations/1
   # GET /locations/1.json
   def show
