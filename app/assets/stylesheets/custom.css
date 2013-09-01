@@ -1,9 +1,15 @@
 /* Bootstrap Overide CSS */
 
+
+html,
+body {
+	height: 100%;
+	/* The html and body elements cannot have any padding or margin. */
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Coda', Georgia, Times, serif;
     text-shadow: 5px 5px 5px #ccc;
-    text-align: center;
 }
 p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
@@ -13,22 +19,44 @@ a.brand {
 	font-family:'Kreon';
 }
 
-div.container.well {
+div.container.well, div.hero-unit, div.navbar-inner, #footer {
 	background: rgba(245, 245, 245, 0.85);
-}
-
-div.hero-unit {
-	background: rgba(245, 245, 245, 0.85);
-}
-
-div#footer {
-	background: rgba(245, 245, 245, 0.95);
-}
-
-div.navbar-inner {
-	background: rgba(245, 245, 245, 0.95);
 }
 
 h1#temp {
 	padding-bottom: 10px;
+}
+
+.container {
+	width: auto;
+	max-width: 800px;
+}
+.container .credit {
+	margin: 20px 0;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	/* Negative indent footer by it's height */
+	margin: 0 auto -60px;
+}
+
+/* Set the fixed height of the footer here */
+#push,
+#footer {
+	height: 60px;
+}
+
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+#footer {
+  	margin-left: -20px;
+  	margin-right: -20px;
+  	padding-left: 20px;
+  	padding-right: 20px;
+	}
 }
