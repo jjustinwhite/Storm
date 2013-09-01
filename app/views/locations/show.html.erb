@@ -1,15 +1,15 @@
-<div id="wrap">
-<!-- Begin page content -->
-  <div class="container" id="main-page">
-    
+
+
 <!-- Hero Unit to display weather info -->
-    <div class="hero-unit">
+<div class="row">
+    <div class="col-md-8 col-md-offset-2 jumbotron">
       <h1>Current Weather</h1>
+      <h3><%= @weather_json["timezone"] %></h3>
       <p class="lead">The current time at <%=@location.address%> is <%=@time %>. </p>
       <p>
-        <ul class="inline">
-          <li><class="lead"><canvas id="icon1" width="164" height="164"></canvas></li>
-          <li><dl class="dl-horizontal">
+        <ul id="weather-inline">
+          <li class="weather-item"><canvas id="icon1" width="164" height="164"></canvas></li>
+          <li class="weather-item"><dl class="dl-horizontal">
             <dd><h1 id="temp"><%=@temp%>°</h1></dd>
             <dt>Condition:</dt> <dd><%=@summary%></dd>
             <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
@@ -20,13 +20,9 @@
         <a class="btn btn-primary btn-large">Learn more</a>
       </p>
     </div>
-    </div>
+</div>
 <!--END Hero Unit-->
 
-
-  <div id="push"></div>
-<!--END Page Content-->
-</div>
 
 
 <!--JS Code for Skycons -->

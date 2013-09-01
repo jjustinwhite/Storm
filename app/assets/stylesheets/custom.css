@@ -1,10 +1,9 @@
 /* Bootstrap Overide CSS */
 
-
-html,
 body {
 	height: 100%;
-	/* The html and body elements cannot have any padding or margin. */
+	padding-top: 65px;
+	padding-bottom: 35px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -15,48 +14,29 @@ p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
 
-a.brand {
+a.navbar-brand {
 	font-family:'Kreon';
 }
 
-div.container.well, div.hero-unit, div.navbar-inner, #footer {
+div.container.well, div.jumbotron {
 	background: rgba(245, 245, 245, 0.85);
-}
-
-h1#temp {
-	padding-bottom: 10px;
 }
 
 .container {
 	width: auto;
-	max-width: 800px;
 }
 .container .credit {
 	margin: 20px 0;
 }
 
-/* Wrapper for page content to push down footer */
-#wrap {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	/* Negative indent footer by it's height */
-	margin: 0 auto -60px;
+#weather-inline .weather-item {display:inline-block;}
+
+nav.navbar.navbar-default.navbar-fixed-bottom {
+	min-height: 30px;
+	max-height: 30px;
 }
 
-/* Set the fixed height of the footer here */
-#push,
-#footer {
-	height: 60px;
-}
-
-
-/* Lastly, apply responsive CSS fixes as necessary */
-@media (max-width: 767px) {
-#footer {
-  	margin-left: -20px;
-  	margin-right: -20px;
-  	padding-left: 20px;
-  	padding-right: 20px;
-	}
+p.navbar-text#footer {
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
