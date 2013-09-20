@@ -24,39 +24,60 @@
 <!--END Hero Unit-->
 
 <div class="row">
-  <ul id="weather-inline">
-    <div class="col-md-3 well">
+    <div class="col-sm-6 col-md-6 col-lg-4 well">
+      <ul id="weather-inline">
       <p>Tomorrow</p>
       <h1 id="temp"> <%=@daily_hightemp[1]%>° | <%=@daily_lowtemp[1]%>°</h1>
       <p><%=@daily_summary[1]%></p>
       <p><li class="weather-item"><canvas id="icon2" width="123" height="123"></canvas></li></p>
+      </ul>
     </div>
-    <div class="col-md-3 well">
-      <p>Two Days Away</p>
+        <div class="col-sm-6 col-md-6 col-lg-4 well">
+      <ul id="weather-inline">
+      <p>Tomorrow</p>
       <h1 id="temp"> <%=@daily_hightemp[2]%>° | <%=@daily_lowtemp[2]%>°</h1>
       <p><%=@daily_summary[2]%></p>
       <p><li class="weather-item"><canvas id="icon3" width="123" height="123"></canvas></li></p>
+      </ul>
     </div>
-    <div class="col-md-3 well">
-      <p>Three Days Away</p>
+        <div class="col-sm-6 col-md-6 col-lg-4 well">
+      <ul id="weather-inline">
+      <p>Tomorrow</p>
       <h1 id="temp"> <%=@daily_hightemp[3]%>° | <%=@daily_lowtemp[3]%>°</h1>
       <p><%=@daily_summary[3]%></p>
       <p><li class="weather-item"><canvas id="icon4" width="123" height="123"></canvas></li></p>
+      </ul>
     </div>
-    <div class="col-md-3 well">
-      <p>Four Days Away</p>
-      <h1 id="temp"> <%=@daily_hightemp[4]%>° | <%=@daily_lowtemp[3]%>°</h1>
+        <div class="col-sm-6 col-md-6 col-lg-4 well">
+      <ul id="weather-inline">
+      <p>Tomorrow</p>
+      <h1 id="temp"> <%=@daily_hightemp[4]%>° | <%=@daily_lowtemp[4]%>°</h1>
       <p><%=@daily_summary[4]%></p>
       <p><li class="weather-item"><canvas id="icon5" width="123" height="123"></canvas></li></p>
+      </ul>
     </div>
-  </ul>
+            <div class="col-sm-6 col-md-6 col-lg-4 well">
+      <ul id="weather-inline">
+      <p>Tomorrow</p>
+      <h1 id="temp"> <%=@daily_hightemp[5]%>° | <%=@daily_lowtemp[5]%>°</h1>
+      <p><%=@daily_summary[5]%></p>
+      <p><li class="weather-item"><canvas id="icon6" width="123" height="123"></canvas></li></p>
+      </ul>
+    </div>
+                <div class="col-sm-6 col-md-6 col-lg-4 well">
+      <ul id="weather-inline">
+      <p>Tomorrow</p>
+      <h1 id="temp"> <%=@daily_hightemp[6]%>° | <%=@daily_lowtemp[6]%>°</h1>
+      <p><%=@daily_summary[6]%></p>
+      <p><li class="weather-item"><canvas id="icon7" width="123" height="123"></canvas></li></p>
+      </ul>
+    </div>
 </div>
 
-<div>
 
 
 
-<!--JS Code for Skycons -->
+
 <%= javascript_tag do %>
   var skycons = new Skycons({"color": "#89CFF0"});
   skycons.add("icon1", Skycons.<%=@icon%>);
@@ -64,5 +85,10 @@
   skycons.add("icon3", Skycons.<%=@daily_icon[2]%>);
   skycons.add("icon4", Skycons.<%=@daily_icon[3]%>);
   skycons.add("icon5", Skycons.<%=@daily_icon[4]%>);
+  skycons.add("icon6", Skycons.<%=@daily_icon[5]%>);
+  skycons.add("icon7", Skycons.<%=@daily_icon[6]%>);
   skycons.play();
 <% end %>
+
+
+

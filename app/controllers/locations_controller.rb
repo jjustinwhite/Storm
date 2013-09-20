@@ -32,7 +32,7 @@ class LocationsController < ApplicationController
     @daily_summary = [], @daily_icon = [], @daily_lowtemp =  [], @daily_hightemp = []
 
       #5 times to include today and next 4 days
-      5.times do
+      7.times do
         @daily_summary[index]= get_summary_description(@weather_json["daily"]["data"][index]["summary"])
         @daily_icon[index]=  get_weather_image(@weather_json["daily"]["data"][index]["icon"])
         @daily_lowtemp[index]= get_temperature_info(@weather_json["daily"]["data"][index]["temperatureMin"])
