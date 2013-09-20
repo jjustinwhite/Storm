@@ -4,8 +4,8 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: postgresql
-  database: my_database_development
+  adapter: sqlite3
+  database: db/development.sqlite3
   pool: 5
   timeout: 5000
 
@@ -20,6 +20,6 @@ test:
 
 production:
   adapter: postgresql
-  database: my_datbase_productionspsql -h localhost
+  database: my_datbase_productions
   pool: 5
   timeout: 5000
