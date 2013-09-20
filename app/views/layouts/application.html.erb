@@ -2,16 +2,14 @@
 <html>
 <head>
   <title>Storm</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Fonts -->
   <link href="http://fonts.googleapis.com/css?family=Coda:bold" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Nobile" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css">
 <!-- End Fonts-->
   
-<!-- Bootstrap -->
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<!--End Bootstrap-->
+
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -20,12 +18,40 @@
 
 <body>
 <!--Navbar-->
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <a class="navbar-brand" href="/">Where's the Storm?</a>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Link</a></li>
-        <li><a href="/">Link</a></li>
-      </ul>
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Where's the Storm?</a>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <form class="navbar-form navbar-left" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search">
+      </div>
+      <button type="submit" class="btn btn-default">Storm?</button>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Current Location <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Saved Locations</a></li>
+          <li><a href="#">Another Saved Location</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.navbar-collapse -->
 </nav>
 <!-- End Navbar -->
 
@@ -42,7 +68,7 @@
 <!-- END Backstretch -->
    
 <!--Footer-->
-<nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+<nav class="navbar navbar-inverse navbar-default navbar-fixed-bottom" role="navigation">
   <p class="navbar-text pull-left" id="footer">Created by 
     <a href="https://twitter.com/jim_challenger" class="navbar-link">Jim Challenger</a> &
     <a href="https://twitter.com/sirjustinwhite" class="navbar-link">Justin White</a>
@@ -53,3 +79,5 @@
 <!--End Footer-->    
 </body>
 </html>
+
+

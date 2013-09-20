@@ -1,42 +1,47 @@
 /* Bootstrap Overide CSS */
 
+
 body {
-	height: 100%;
-	padding-top: 65px;
-	padding-bottom: 35px;
+  height: 100%;
+  padding-top: 65px;
+  padding-bottom: 35px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Coda', Georgia, Times, serif;
-    text-shadow: 5px 5px 5px #ccc;
+    text-shadow: 3px 3px 3px #7a7a7a;
 }
 p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
 
 a.navbar-brand {
-	font-family:'Kreon';
+  font-family:'Kreon';
 }
 
 div.container.well, div.jumbotron {
-	background: rgba(245, 245, 245, 0.85);
-}
+  background: rgba(138, 166, 185, 0.8);
+} 
+
+.well {
+  background: rgba(138, 166, 185, 0.8);
+} 
 
 .container {
-	width: auto;
+  width: auto;
 }
 .container .credit {
-	margin: 20px 0;
+  margin: 20px 0;
 }
 
 #weather-inline .weather-item {display:inline-block;}
 
 nav.navbar.navbar-default.navbar-fixed-bottom {
-	min-height: 30px;
-	max-height: 30px;
+  min-height: 30px;
+  max-height: 30px;
 }
 
 p.navbar-text#footer {
-	margin-top: 8px;
-	margin-bottom: 8px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }

@@ -17,7 +17,7 @@
 <p class="lead">Where's the Storm is a simple web app that tells you when the next storm is coming.</p>
   <div class="field">
     <p>Enter your address, zipcode, or nearby city to find a storm:</p>
-    <%= f.text_field :address %> <%= f.submit "Search Location", class: "btn btn-primary" %>
+    <div class="col-lg-4 col-sm-4 col-md-4"><%= f.text_field :address, :class => 'form-control', :placeholder => 'search for storms' %></div> <%= f.submit "Storm?", class: "btn btn-primary" %>
   </div>
 </p>
 
