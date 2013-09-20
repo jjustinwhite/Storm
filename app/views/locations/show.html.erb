@@ -27,26 +27,26 @@
   <ul id="weather-inline">
     <div class="col-md-3 well">
       <p>Tomorrow</p>
-      <h1 id="temp"> <%=@daily_hightemp_1%>° | <%=@daily_lowtemp_1%>°</h1>
-      <p><%=@daily_summary_1%></p>
+      <h1 id="temp"> <%=@daily_hightemp[1]%>° | <%=@daily_lowtemp[1]%>°</h1>
+      <p><%=@daily_summary[1]%></p>
       <p><li class="weather-item"><canvas id="icon2" width="123" height="123"></canvas></li></p>
     </div>
     <div class="col-md-3 well">
       <p>Two Days Away</p>
-      <h1 id="temp"> <%=@daily_hightemp_2%>° | <%=@daily_lowtemp_2%>°</h1>
-      <p><%=@daily_summary_2%></p>
+      <h1 id="temp"> <%=@daily_hightemp[2]%>° | <%=@daily_lowtemp[2]%>°</h1>
+      <p><%=@daily_summary[2]%></p>
       <p><li class="weather-item"><canvas id="icon3" width="123" height="123"></canvas></li></p>
     </div>
     <div class="col-md-3 well">
       <p>Three Days Away</p>
-      <h1 id="temp"> <%=@daily_hightemp_3%>° | <%=@daily_lowtemp_3%>°</h1>
-      <p><%=@daily_summary_3%></p>
+      <h1 id="temp"> <%=@daily_hightemp[3]%>° | <%=@daily_lowtemp[3]%>°</h1>
+      <p><%=@daily_summary[3]%></p>
       <p><li class="weather-item"><canvas id="icon4" width="123" height="123"></canvas></li></p>
     </div>
     <div class="col-md-3 well">
       <p>Four Days Away</p>
-      <h1 id="temp"> <%=@daily_hightemp_4%>° | <%=@daily_lowtemp_4%>°</h1>
-      <p><%=@daily_summary_4%></p>
+      <h1 id="temp"> <%=@daily_hightemp[4]%>° | <%=@daily_lowtemp[3]%>°</h1>
+      <p><%=@daily_summary[4]%></p>
       <p><li class="weather-item"><canvas id="icon5" width="123" height="123"></canvas></li></p>
     </div>
   </ul>
@@ -60,9 +60,9 @@
 <%= javascript_tag do %>
   var skycons = new Skycons({"color": "#89CFF0"});
   skycons.add("icon1", Skycons.<%=@icon%>);
-  skycons.add("icon2", Skycons.<%=@daily_icon_1%>);
-  skycons.add("icon3", Skycons.<%=@daily_icon_2%>);
-  skycons.add("icon4", Skycons.<%=@daily_icon_3%>);
-  skycons.add("icon5", Skycons.<%=@daily_icon_4%>);
+  skycons.add("icon2", Skycons.<%=@daily_icon[1]%>);
+  skycons.add("icon3", Skycons.<%=@daily_icon[2]%>);
+  skycons.add("icon4", Skycons.<%=@daily_icon[3]%>);
+  skycons.add("icon5", Skycons.<%=@daily_icon[4]%>);
   skycons.play();
 <% end %>
