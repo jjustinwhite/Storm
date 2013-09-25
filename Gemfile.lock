@@ -19,6 +19,8 @@ GEM
       activesupport (= 4.0.0)
       arel (~> 4.0.0)
     activerecord-deprecated_finders (1.0.3)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activesupport (4.0.0)
       i18n (~> 0.6, >= 0.6.4)
       minitest (~> 4.2)
@@ -118,6 +120,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activerecord-postgresql-adapter
   coffee-rails (~> 4.0.0)
   geocoder
   gmaps4rails

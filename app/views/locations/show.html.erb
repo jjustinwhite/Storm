@@ -7,10 +7,10 @@
          <%=@hourly_summary %> </p>
       <p>
         <ul id="weather-inline">
-        <h3>Right Now:</h3>
           <li class="weather-item"><canvas id="icon1" width="164" height="164"></canvas></li>
           <li class="weather-item"><dl class="dl-horizontal">
-            <dd><h1 id="temp"><%=@temp%>°</h1></dd>
+            <dt></dt><dd><h3>Right Now</h3></dd>
+            <dt></dt><dd><h1 id="temp center"><%=@temp%>°</h></dd>
             <dt>Condition:</dt> <dd><%=@summary%></dd>
             <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
             <dt>Precip. Intensity:</dt> <dd> <%=@intensity%></dd>
@@ -24,56 +24,44 @@
 <!--END Hero Unit-->
 
 <div class="row">
-    <div class="col-sm-6 col-md-6 col-lg-4 well">
-      <ul id="weather-inline">
-      <p>Tomorrow</p>
-      <h1 id="temp"> <%=@daily_hightemp[1]%>° | <%=@daily_lowtemp[1]%>°</h1>
-      <p><%=@daily_summary[1]%></p>
-      <p><li class="weather-item"><canvas id="icon2" width="123" height="123"></canvas></li></p>
-      </ul>
+
+
+<% index = 1 %>
+<% 6.times do %>
+  <div class="col-lg-2 col-md-4 col-sm-6 col-xs-4 forecast well">
+    <div class="row">
+      <strong><p class="lead"><strong><%=@daily_time[index]%></strong></p></strong>
     </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 well">
-      <ul id="weather-inline">
-      <p>Tomorrow</p>
-      <h1 id="temp"> <%=@daily_hightemp[2]%>° | <%=@daily_lowtemp[2]%>°</h1>
-      <p><%=@daily_summary[2]%></p>
-      <p><li class="weather-item"><canvas id="icon3" width="123" height="123"></canvas></li></p>
-      </ul>
+    <div class="row">
+      <p id="temp"> <strong><%=@daily_hightemp[index]%>°</strong> <small><%=@daily_lowtemp[index]%>°</small></p> 
     </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 well">
-      <ul id="weather-inline">
-      <p>Tomorrow</p>
-      <h1 id="temp"> <%=@daily_hightemp[3]%>° | <%=@daily_lowtemp[3]%>°</h1>
-      <p><%=@daily_summary[3]%></p>
-      <p><li class="weather-item"><canvas id="icon4" width="123" height="123"></canvas></li></p>
-      </ul>
+    <div class="row">
+       <p><%=@daily_summary[index]%></p>
     </div>
-        <div class="col-sm-6 col-md-6 col-lg-4 well">
-      <ul id="weather-inline">
-      <p>Tomorrow</p>
-      <h1 id="temp"> <%=@daily_hightemp[4]%>° | <%=@daily_lowtemp[4]%>°</h1>
-      <p><%=@daily_summary[4]%></p>
-      <p><li class="weather-item"><canvas id="icon5" width="123" height="123"></canvas></li></p>
-      </ul>
+    <div class="row">
+      <% case index+1 %>
+      <% when 1 %>
+        <canvas id="icon1" width="123" height="123"></canvas>
+      <% when 2 %>
+        <canvas id="icon2" width="123" height="123"></canvas>
+      <% when 3 %>
+        <canvas id="icon3" width="123" height="123"></canvas>
+      <% when 4 %>
+        <canvas id="icon4" width="123" height="123"></canvas>
+      <% when 5 %>
+        <canvas id="icon5" width="123" height="123"></canvas>
+      <% when 6 %>
+        <canvas id="icon6" width="123" height="123"></canvas>
+      <% when 7 %>
+        <canvas id="icon7" width="123" height="123"></canvas>
+      <% end %>
     </div>
-            <div class="col-sm-6 col-md-6 col-lg-4 well">
-      <ul id="weather-inline">
-      <p>Tomorrow</p>
-      <h1 id="temp"> <%=@daily_hightemp[5]%>° | <%=@daily_lowtemp[5]%>°</h1>
-      <p><%=@daily_summary[5]%></p>
-      <p><li class="weather-item"><canvas id="icon6" width="123" height="123"></canvas></li></p>
-      </ul>
-    </div>
-                <div class="col-sm-6 col-md-6 col-lg-4 well">
-      <ul id="weather-inline">
-      <p>Tomorrow</p>
-      <h1 id="temp"> <%=@daily_hightemp[6]%>° | <%=@daily_lowtemp[6]%>°</h1>
-      <p><%=@daily_summary[6]%></p>
-      <p><li class="weather-item"><canvas id="icon7" width="123" height="123"></canvas></li></p>
-      </ul>
-    </div>
-</div>
- 
+  </div>
+<% index = index + 1 %>
+<% end %>
+
+
+
 
  
 

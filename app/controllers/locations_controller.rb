@@ -16,6 +16,10 @@ class LocationsController < ApplicationController
     return summary
   end
 
+  def convert_time(time)
+    time = Time.at(time).to_date.strftime("%A")
+  end
+
   # GET /locations/1
   # GET /locations/1.json
   def show
@@ -29,7 +33,7 @@ class LocationsController < ApplicationController
 
     #Daily
     index = 0
-    @daily_summary = [], @daily_icon = [], @daily_lowtemp =  [], @daily_hightemp = []
+    @daily_summary = [], @daily_icon = [], @daily_lowtemp =  [], @daily_hightemp = [], @daily_time = []
 
       #5 times to include today and next 4 days
       7.times do
@@ -37,7 +41,7 @@ class LocationsController < ApplicationController
         @daily_icon[index]=  get_weather_image(@weather_json["daily"]["data"][index]["icon"])
         @daily_lowtemp[index]= get_temperature_info(@weather_json["daily"]["data"][index]["temperatureMin"])
         @daily_hightemp[index]=  get_temperature_info(@weather_json["daily"]["data"][index]["temperatureMax"])
-
+        @daily_time[index]=  convert_time(@weather_json["daily"]["data"][index]["time"])
         index = index + 1
       end
 

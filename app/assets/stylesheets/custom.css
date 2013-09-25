@@ -34,7 +34,13 @@ div.container.well, div.jumbotron {
   margin: 20px 0;
 }
 
-#weather-inline .weather-item {display:inline-block;}
+#weather-inline .weather-item {
+  display:inline-block;
+}
+
+.forecast {
+  text-align: center;
+}
 
 nav.navbar.navbar-default.navbar-fixed-bottom {
   min-height: 30px;
@@ -46,5 +52,15 @@ p.navbar-text#footer {
   margin-bottom: 8px;
 }
 
+.blurred {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);  
+}
+
+p#temp{
+  font-size: 30px;
+}
 
 
