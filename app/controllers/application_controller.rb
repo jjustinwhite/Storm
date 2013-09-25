@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+
 	def get_weather_image(icon)
 		icons = {"clear-day" => "CLEAR_DAY", "clear-night" => "CLEAR_NIGHT", "partly-cloudy-day" => "PARTLY_CLOUDY_DAY", "partly-cloudy-night" => "PARTLY_CLOUDY_NIGHT", "cloudy" => "CLOUDY", "rain" => "RAIN", "sleet" => "SLEET", "snow" => "SNOW", "wind" => "WIND", "fog" => "FOG"}
 		return icons[icon]

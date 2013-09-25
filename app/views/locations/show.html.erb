@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2 jumbotron">
       <h1>Today</h1>
-      <p class="lead">It is currently <%=@summary %> at <%=@location.address%>. <br />
+      <p class="lead">It is currently <%=@summary %> at <%=@location.address %>. <br />
         It will be <%=@minutely_summary %> <br />
          <%=@hourly_summary %> </p>
       <p>
@@ -10,7 +10,7 @@
           <li class="weather-item"><canvas id="icon1" width="164" height="164"></canvas></li>
           <li class="weather-item"><dl class="dl-horizontal">
             <dt></dt><dd><h3>Right Now</h3></dd>
-            <dt></dt><dd><h1 id="temp center"><%=@temp%>°</h></dd>
+            <dt></dt><dd><h1 id="temp center"><%=@temp%>°</h1></dd>
             <dt>Condition:</dt> <dd><%=@summary%></dd>
             <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
             <dt>Precip. Intensity:</dt> <dd> <%=@intensity%></dd>
@@ -19,6 +19,7 @@
         </ul>
         <a class="btn btn-primary btn-large">Learn more</a>
       </p>
+      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x400&sensor=false&zoom=13&center=#{@location.latitude}%2C#{@location.longitude}&visual_refresh=true" %>
     </div>
 </div>
 <!--END Hero Unit-->
@@ -59,11 +60,6 @@
   </div>
 <% index = index + 1 %>
 <% end %>
-
-
-
-
- 
 
 
 

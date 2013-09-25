@@ -1,6 +1,5 @@
 /* Bootstrap Overide CSS */
 
-
 body {
   height: 100%;
   padding-top: 65px;
@@ -52,12 +51,7 @@ p.navbar-text#footer {
   margin-bottom: 8px;
 }
 
-.blurred {
-  -webkit-filter: blur(2px);
-  -moz-filter: blur(2px);
-  -o-filter: blur(2px);
-  -ms-filter: blur(2px);  
-}
+
 
 p#temp{
   font-size: 30px;

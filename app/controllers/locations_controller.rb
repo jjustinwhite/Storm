@@ -30,6 +30,8 @@ class LocationsController < ApplicationController
     @temp = get_temperature_info(@weather_json["currently"]["temperature"])
     @precip = 100 * @weather_json["currently"]["precipProbability"]
     @intensity = 100 * @weather_json["currently"]["precipIntensity"]
+    @city = request.location.city
+    @country = request.location.country_code
 
     #Daily
     index = 0
