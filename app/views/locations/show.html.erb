@@ -1,35 +1,48 @@
-<!-- Hero Unit to display weather info -->
+<!-- Google Maps Background-->
+<div id="map-container"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=650x650&sensor=false&zoom=13&center=#{@location.latitude}%2C#{@location.longitude}&visual_refresh=true&scale=2&key=AIzaSyCAaruC-8uY0mbl_eXQRT0Co4ou_EKr9cI", :id =>"map", :class => "img-rounded img-responsive" %></div> 
+<!-- END Google Maps Background-->
+
+<!-- Severe Weather Alerts  || needs if statement to hide if no alert exists
+
+<div class="alert alert-dismissable alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Warning!</strong> <%= @alert_title%>. <a href="<%= @alert_url %>" class="alert-link">More info here!</a> 
+</div>
+
+ END Severe Weather Alerts -->
+
+
+<!-- New Jumbotron -->
+
 <div class="row">
-    <div class="col-md-8 col-md-offset-2 jumbotron">
-      <h1>Today</h1>
-      <p class="lead">It is currently <%=@summary %> at <%=@location.address %>. <br />
-        It will be <%=@minutely_summary %> <br />
-         <%=@hourly_summary %> </p>
-      <p>
-        <ul id="weather-inline">
-          <li class="weather-item"><canvas id="icon1" width="164" height="164"></canvas></li>
-          <li class="weather-item"><dl class="dl-horizontal">
-            <dt></dt><dd><h3>Right Now</h3></dd>
-            <dt></dt><dd><h1 id="temp center"><%=@temp%>°</h1></dd>
-            <dt>Condition:</dt> <dd><%=@summary%></dd>
-            <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
-            <dt>Precip. Intensity:</dt> <dd> <%=@intensity%></dd>
-            <dt>Wind Speed:</dt> <dd> <%=@wind.to_i%> mph</dd>
-          </dl></li>
-        </ul>
-        <a class="btn btn-primary btn-large">Learn more</a>
-      </p>
-      <%= image_tag "http://maps.google.com/maps/api/staticmap?size=450x400&sensor=false&zoom=13&center=#{@location.latitude}%2C#{@location.longitude}&visual_refresh=true" %>
+    <div class="jumbotron col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="container">
+        <h1>Currently   <small><%=@summary %></small></h1>
+          <p><%=@minutely_summary %></p>
+          <p><strong>Current Temp: </strong><%=@temp%>°</p>
+          <p><strong>Feels Like: </strong><%= @feelsLike%>°</p>
+          <p><canvas id="icon1" width="164" height="164"></canvas></p>
+      </div>
+    </div>
+    <div class="jumbotron col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="container">
+        <h1>Today   <small><%=@daily_time[0]%></small></h1>
+          <p><%=@hourly_summary %></p>
+          <p id="temp"> <strong><%=@daily_hightemp[0]%>°</strong> <small><%=@daily_lowtemp[0]%>°</small></p> 
+          <p><small><%=@daily_precip[0]%>% chance of precipitation</small></p>
+          <p><%=@daily_cloud[0]%>% cloud coverage</p>
+          <p><canvas id="icon0" width="123" height="123"></canvas></p>
+      </div>
     </div>
 </div>
-<!--END Hero Unit-->
 
+<!-- END New Jumbotron -->
+
+<!-- Forecast -->
 <div class="row">
-
-
 <% index = 1 %>
 <% 6.times do %>
-  <div class="col-lg-2 col-md-4 col-sm-6 col-xs-4 forecast well">
+  <div class="col-lg-2 col-md-4 col-sm-6 col-xs-4 forecast container-forecast well">
     <div class="row">
       <strong><p class="lead"><strong><%=@daily_time[index]%></strong></p></strong>
     </div>
@@ -60,12 +73,27 @@
   </div>
 <% index = index + 1 %>
 <% end %>
+</div>
+<!-- END Forecast -->
 
-
+                <!-- Old Code Keep for weather-inline format     
+                        <ul id="weather-inline">
+                          <li class="weather-item"><canvas id="icon1" width="164" height="164"></canvas></li>
+                          <li class="weather-item"><dl class="dl-horizontal">
+                            <dt></dt><dd><h3>Right Now</h3></dd>
+                            <dt></dt><dd><h1 id="temp center"><%=@temp%>°</h1></dd>
+                            <dt>Condition:</dt> <dd><%=@summary%></dd>
+                            <dt>Precipitation:</dt> <dd> <%=@precip%>% <small>chance</small></dd>
+                            <dt>Precip. Intensity:</dt> <dd> <%=@intensity%></dd>
+                            <dt>Wind Speed:</dt> <dd> <%=@wind.to_i%> mph</dd>
+                          </dl></li>
+                        </ul>
+                until phased into new jumbotron-->
 
 <%= javascript_tag do %>
   var skycons = new Skycons({"color": "#89CFF0"});
   skycons.add("icon1", Skycons.<%=@icon%>);
+  skycons.add("icon0", Skycons.<%=@daily_icon[0]%>);
   skycons.add("icon2", Skycons.<%=@daily_icon[1]%>);
   skycons.add("icon3", Skycons.<%=@daily_icon[2]%>);
   skycons.add("icon4", Skycons.<%=@daily_icon[3]%>);

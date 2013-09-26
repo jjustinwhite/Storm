@@ -1,4 +1,9 @@
-<%= form_for(@location, :html => {:class=> "form-horizontal"}) do |f| %>
+<div class="row"><div class="alert alert-dismissable alert-success col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+  <strong>Welcome!</strong> Where's the Storm is still in development right now. Feel free to poke around, and let us know what you think <a href="#" class="alert-link">here!</a>
+</div></div>
+
+<div class="row"><%= form_for(@location, :html => {:class=> "form-horizontal"}) do |f| %>
 <div class="well col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
   <% if @location.errors.any? %>
     <div id="error_explanation">
@@ -23,3 +28,4 @@
 </p>
 </div>
 <% end %>
+</div>

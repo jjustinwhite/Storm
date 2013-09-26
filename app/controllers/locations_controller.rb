@@ -24,19 +24,19 @@ class LocationsController < ApplicationController
   # GET /locations/1.json
   def show
     @weather_json = Weather_Forecast.get_forecast(@location.latitude, @location.longitude)
+
+    #Currently
     @time = Time.at(@weather_json["currently"]["time"])
     @summary = get_summary_description(@weather_json["currently"]["summary"])
     @icon = get_weather_image(@weather_json["currently"]["icon"])
     @temp = get_temperature_info(@weather_json["currently"]["temperature"])
+    @feelsLike = get_temperature_info(@weather_json["currently"]["apparentTemperature"])
     @precip = 100 * @weather_json["currently"]["precipProbability"]
     @intensity = 100 * @weather_json["currently"]["precipIntensity"]
-    @city = request.location.city
-    @country = request.location.country_code
 
     #Daily
     index = 0
-    @daily_summary = [], @daily_icon = [], @daily_lowtemp =  [], @daily_hightemp = [], @daily_time = []
-
+    @daily_summary = [], @daily_icon = [], @daily_lowtemp =  [], @daily_hightemp = [], @daily_time = [], @daily_precip = [], @daily_cloud = []
       #5 times to include today and next 4 days
       7.times do
         @daily_summary[index]= get_summary_description(@weather_json["daily"]["data"][index]["summary"])
@@ -44,15 +44,24 @@ class LocationsController < ApplicationController
         @daily_lowtemp[index]= get_temperature_info(@weather_json["daily"]["data"][index]["temperatureMin"])
         @daily_hightemp[index]=  get_temperature_info(@weather_json["daily"]["data"][index]["temperatureMax"])
         @daily_time[index]=  convert_time(@weather_json["daily"]["data"][index]["time"])
+        @daily_precip[index]= 100 * @weather_json["daily"]["data"][index]["precipProbability"]
+        @daily_cloud[index] = 100 * @weather_json["daily"]["data"][index]["cloudCover"]
         index = index + 1
       end
-
 
     #Hourly
     @hourly_summary = @weather_json["hourly"]["summary"]
 
     #Minutely
     @minutely_summary = @weather_json["minutely"]["summary"]
+
+    
+    #Alerts
+    #@alert_title = @weather_json["alerts"][0]["title"]
+    #@alert_url = @weather_json["alerts"][0]["uri"]
+    #@alert_time = @weather_json["alerts"][0]["time"]
+    #@alerts = @weather_json["alerts"]
+ 
   end
 
   # GET /locations/new
