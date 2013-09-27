@@ -7,7 +7,7 @@ body {
 }
 
 body{
-    background:url('storm.jpg') center center no-repeat;
+    background:url('/assets/storm.jpg') center center no-repeat;
     min-height:100%;
     background-size: cover;
     background-size: 1500px 1100px;
