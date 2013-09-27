@@ -6,6 +6,13 @@ body {
   padding-bottom: 35px;
 }
 
+body{
+    background:url('storm.jpg') center center no-repeat;
+    min-height:100%;
+    background-size: cover;
+    background-size: 1500px 1100px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Coda', Georgia, Times, serif;
     
@@ -56,8 +63,6 @@ p.navbar-text#footer {
   margin-top: 8px;
   margin-bottom: 8px;
 }
-
-
 
 p#temp{
   font-size: 30px;
