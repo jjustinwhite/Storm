@@ -7,10 +7,13 @@ body {
 }
 
 body{
-    background:url('/assets/storm.jpg') center center no-repeat;
+    background:url('http://i.imgur.com/l4jeRSH.jpg') center center no-repeat;
     min-height:100%;
     background-size: cover;
     background-size: 1500px 1100px;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
