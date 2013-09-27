@@ -1,5 +1,5 @@
 require 'weather_forecast'
-require 'Time'
+
 
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
