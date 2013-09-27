@@ -2,40 +2,41 @@
 <div id="map-container"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=650x650&sensor=false&zoom=13&center=#{@location.latitude}%2C#{@location.longitude}&visual_refresh=true&scale=2&key=AIzaSyCAaruC-8uY0mbl_eXQRT0Co4ou_EKr9cI", :id =>"map", :class => "img-rounded img-responsive" %></div> 
 <!-- END Google Maps Background-->
 
-<!-- Severe Weather Alerts  || needs if statement to hide if no alert exists
-
+<!-- Severe Weather Alerts  || needs if statement to hide if no alert exists -->
+<% if @weather_json["alerts"] %>
 <div class="alert alert-dismissable alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>Warning!</strong> <%= @alert_title%>. <a href="<%= @alert_url %>" class="alert-link">More info here!</a> 
+  <strong>Warning! <%= @alert_title%>.</strong><p><%=@alert_description %>...</p><a href="<%= @alert_url %>" class="alert-link">More info here!</a>
 </div>
+<% end %>
 
- END Severe Weather Alerts -->
+ <!-- END Severe Weather Alerts -->
 
 
 <!-- New Jumbotron -->
 
 <div class="row">
-    <div class="jumbotron col-lg-6 col-md-6 col-sm-12 col-xs-12">
+    <div class="jumbotron col-lg-6 col-md-12 col-sm-12 col-xs-12">
       <div class="container">
-        <h1>Currently   <small><%=@summary %></small></h1>
+        <h1>Today   <small><%=@daily_time[0]%></small></h1>
+        <div><p class="pull-right"><canvas id="icon0" width="123" height="123"></canvas></p></div>
+          <p><%=@hourly_summary %></p>
+          <p id="temp"> <strong><%=@daily_hightemp[0]%>°</strong> <small><%=@daily_lowtemp[0]%>°</small></p> 
+          <p><%=@daily_precip[0]%>% chance of precipitation</p>
+          <p><small><%=@daily_cloud[0]%>% cloud coverage</small></p>
+      </div>
+    </div>
+
+    <div class="jumbotron col-lg-5 col-lg-offset-1 col-md-12 col-sm-12 col-xs-12">
+      <div class="container">
+        <h2>Currently   <small><%=@summary %></small></h2>
+        <div><p class="pull-right"><canvas id="icon1" width="123" height="123"></canvas></p></div>
           <p><%=@minutely_summary %></p>
           <p><strong>Current Temp: </strong><%=@temp%>°</p>
           <p><strong>Feels Like: </strong><%= @feelsLike%>°</p>
-          <p><canvas id="icon1" width="164" height="164"></canvas></p>
-      </div>
-    </div>
-    <div class="jumbotron col-lg-6 col-md-6 col-sm-12 col-xs-12">
-      <div class="container">
-        <h1>Today   <small><%=@daily_time[0]%></small></h1>
-          <p><%=@hourly_summary %></p>
-          <p id="temp"> <strong><%=@daily_hightemp[0]%>°</strong> <small><%=@daily_lowtemp[0]%>°</small></p> 
-          <p><small><%=@daily_precip[0]%>% chance of precipitation</small></p>
-          <p><%=@daily_cloud[0]%>% cloud coverage</p>
-          <p><canvas id="icon0" width="123" height="123"></canvas></p>
       </div>
     </div>
 </div>
-
 <!-- END New Jumbotron -->
 
 <!-- Forecast -->

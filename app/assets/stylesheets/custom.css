@@ -10,6 +10,12 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Coda', Georgia, Times, serif;
     
 }
+
+h1#logo{
+  font-family:'Kreon';
+  font-size: 60px;
+}
+
 p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
@@ -68,6 +74,10 @@ p#temp{
     top: 0;
     left: 0;
     z-index: 0;
+}
+
+div.row.jumbotron{
+  height: 100%;
 }
 
 #map

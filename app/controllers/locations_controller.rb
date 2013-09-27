@@ -31,8 +31,8 @@ class LocationsController < ApplicationController
     @icon = get_weather_image(@weather_json["currently"]["icon"])
     @temp = get_temperature_info(@weather_json["currently"]["temperature"])
     @feelsLike = get_temperature_info(@weather_json["currently"]["apparentTemperature"])
-    @precip = 100 * @weather_json["currently"]["precipProbability"]
-    @intensity = 100 * @weather_json["currently"]["precipIntensity"]
+    @precip = (100 * @weather_json["currently"]["precipProbability"]).round
+    @intensity = (100 * @weather_json["currently"]["precipIntensity"]).round
 
     #Daily
     index = 0
@@ -44,8 +44,8 @@ class LocationsController < ApplicationController
         @daily_lowtemp[index]= get_temperature_info(@weather_json["daily"]["data"][index]["temperatureMin"])
         @daily_hightemp[index]=  get_temperature_info(@weather_json["daily"]["data"][index]["temperatureMax"])
         @daily_time[index]=  convert_time(@weather_json["daily"]["data"][index]["time"])
-        @daily_precip[index]= 100 * @weather_json["daily"]["data"][index]["precipProbability"]
-        @daily_cloud[index] = 100 * @weather_json["daily"]["data"][index]["cloudCover"]
+        @daily_precip[index]= (100 * @weather_json["daily"]["data"][index]["precipProbability"]).round
+        @daily_cloud[index] = (100 * @weather_json["daily"]["data"][index]["cloudCover"]).round
         index = index + 1
       end
 
@@ -57,10 +57,13 @@ class LocationsController < ApplicationController
 
     
     #Alerts
-    #@alert_title = @weather_json["alerts"][0]["title"]
-    #@alert_url = @weather_json["alerts"][0]["uri"]
-    #@alert_time = @weather_json["alerts"][0]["time"]
-    #@alerts = @weather_json["alerts"]
+    @alert_index = @weather_json["alerts"]
+    if @weather_json["alerts"]
+      @alert_title = @weather_json["alerts"][0]["title"]
+      @alert_url = @weather_json["alerts"][0]["uri"]
+      @alert_time = @weather_json["alerts"][0]["time"]
+      @alert_description = @weather_json["alerts"][0]["description"][0..116]
+    end
  
   end
 
