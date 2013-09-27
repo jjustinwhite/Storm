@@ -7,6 +7,7 @@ gem 'httparty'
 gem 'geocoder'
 gem 'protected_attributes'
 gem 'gmaps4rails'
+gem 'rails_serve_static_assets'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -42,7 +43,7 @@ end
 
 group :production do
   gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+  gem 'rails_12factor'
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

@@ -137,7 +137,8 @@ DEPENDENCIES
   pg (= 0.15.1)
   protected_attributes
   rails (= 4.0.0)
-  rails_12factor (= 0.0.2)
+  rails_12factor
+  rails_serve_static_assets
   sass-rails
   sdoc
   sqlite3
