@@ -7,7 +7,6 @@ gem 'httparty'
 gem 'geocoder'
 gem 'protected_attributes'
 gem 'gmaps4rails'
-gem 'rails_serve_static_assets'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
