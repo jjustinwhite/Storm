@@ -31,7 +31,7 @@ class LocationsController < ApplicationController
     @icon = get_weather_image(@weather_json["currently"]["icon"])
     @temp = get_temperature_info(@weather_json["currently"]["temperature"])
     @feelsLike = get_temperature_info(@weather_json["currently"]["apparentTemperature"])
-    @precip = (100 * @weather_json["currently"]["precipProbability"]).round
+    @precip = @weather_json["currently"]["precipProbability"]
     @intensity = (100 * @weather_json["currently"]["precipIntensity"]).round
 
     #Daily
@@ -58,7 +58,7 @@ class LocationsController < ApplicationController
     
     #Alerts
     @alert_index = @weather_json["alerts"]
-    if @weather_json["alerts"]
+    if @alert_index
       @alert_title = @weather_json["alerts"][0]["title"]
       @alert_url = @weather_json["alerts"][0]["uri"]
       @alert_time = @weather_json["alerts"][0]["time"]

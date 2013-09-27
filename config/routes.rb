@@ -1,4 +1,6 @@
 Storm::Application.routes.draw do
+  resources :users
+
   resources :locations
 
   #root 'main#index'

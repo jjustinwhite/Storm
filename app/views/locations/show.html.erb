@@ -6,7 +6,7 @@
 <% if @weather_json["alerts"] %>
 <div class="alert alert-dismissable alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>Warning! <%= @alert_title%>.</strong><p><%=@alert_description %>...</p><a href="<%= @alert_url %>" class="alert-link">More info here!</a>
+  <strong>Warning! <%= @alert_title%>.</strong><p><small><%=@alert_description %>...</small></p><a href="<%= @alert_url %>" class="alert-link">More info here!</a>
 </div>
 <% end %>
 
@@ -103,6 +103,7 @@
   skycons.add("icon7", Skycons.<%=@daily_icon[6]%>);
   skycons.play();
 <% end %>
+
 
 
 
