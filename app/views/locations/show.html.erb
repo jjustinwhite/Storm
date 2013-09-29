@@ -44,7 +44,7 @@
 <div class="row">
 <% index = 1 %>
 <% 6.times do %>
-  <div class="col-lg-2 col-md-4 col-sm-6 col-xs-4 forecast container-forecast well">
+  <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 forecast container-forecast well">
     <div class="row">
       <strong><p class="lead"><strong><%=@daily_time[index]%></strong></p></strong>
     </div>
@@ -104,7 +104,4 @@
   skycons.add("icon7", Skycons.<%=@daily_icon[6]%>);
   skycons.play();
 <% end %>
-
-
-
 
