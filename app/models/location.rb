@@ -4,7 +4,7 @@ class Location < ActiveRecord::Base
   	reverse_geocoded_by :latitude, :longitude do |address,results|
   		if geo = results.first
     		address.city = geo.city
-    		address.state = geo.state
+    		address.state = geo.state_code
     		address.street = geo.address
     		address.country = geo.country
   		end
