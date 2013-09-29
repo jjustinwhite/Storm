@@ -1,4 +1,4 @@
-<!-- Google Maps Background-->
+<body id="results"><!-- Google Maps Background-->
 <div id="map-container"><%= image_tag "http://maps.google.com/maps/api/staticmap?size=650x650&sensor=false&zoom=13&center=#{@location.latitude}%2C#{@location.longitude}&visual_refresh=true&scale=2&key=AIzaSyCAaruC-8uY0mbl_eXQRT0Co4ou_EKr9cI", :id =>"map", :class => "img-rounded img-responsive" %></div> 
 <!-- END Google Maps Background-->
 
@@ -104,4 +104,4 @@
   skycons.add("icon7", Skycons.<%=@daily_icon[6]%>);
   skycons.play();
 <% end %>
-
+</body>

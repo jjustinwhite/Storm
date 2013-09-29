@@ -4,6 +4,7 @@ body {
   height: 100%;
   padding-top: 65px;
   padding-bottom: 35px;
+
 }
 
 body#home {
@@ -13,7 +14,6 @@ body#home {
     -o-background-size: cover;
     background-size: cover;
 }
-
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Coda', Georgia, Times, serif;
@@ -43,10 +43,12 @@ a.navbar-brand {
 
 div.container.well, div.jumbotron {
   background: rgba(138, 166, 185, 0.95);
+  -webkit-transform: translate3d(0,0,0);
 } 
 
 .well {
   background: rgba(138, 166, 185, .9);
+  -webkit-transform: translate3d(0,0,0);
 } 
 
 .container {
