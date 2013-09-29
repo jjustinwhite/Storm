@@ -4,15 +4,13 @@ body {
   height: 100%;
   padding-top: 65px;
   padding-bottom: 35px;
-}
-
-body{
-    background: url(image-path('storm.jpg')) no-repeat center center fixed; 
+  background: url(image-path('storm.jpg')) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
+
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Coda', Georgia, Times, serif;
