@@ -24,6 +24,8 @@ h1, h2, h3, h4, h5, h6 {
 h1#logo{
   font-family:'Kreon';
   font-size: 60px;
+  text-align: center;
+  color: rgba(138, 166, 185, .9);
 }
 
 p, div {
@@ -86,6 +88,7 @@ p#temp{
 
 div.row.jumbotron{
   height: 100%;
+  background-color: none;
 }
 
 #map
@@ -99,4 +102,8 @@ img{
   -webkit-user-select: none;
   /* this will work for QtWebKit in future */
   -webkit-user-drag: none;
+}
+
+#search-button{
+  text-align:center;
 }
