@@ -6,7 +6,7 @@ body {
   padding-bottom: 35px;
 }
 
-body#bg-img-home{
+#bg-img-home{
     background: url(storm.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
