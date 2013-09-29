@@ -24,7 +24,6 @@
           <p><%=@daily_summary[0] %></p>
           <p><%=@daily_precip[0]%>% chance of rain</p>
           <p><small><%=@daily_cloud[0]%>% cloud coverage</small></p>
-          <p>For the hour: <%=@hourly_summary %></p>
       </div>
     </div>
 
@@ -35,6 +34,7 @@
           <p><%=@minutely_summary %></p>
           <p><strong>Current Temp: </strong><%=@temp%>°</p>
           <p><strong>Feels Like: </strong><%= @feelsLike%>°</p>
+          <p>Coming Up: <%=@hourly_summary %></p>
       </div>
     </div>
 </div>
