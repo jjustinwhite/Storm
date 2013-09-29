@@ -28,6 +28,12 @@ h1#logo{
   color: rgba(138, 166, 185, .9);
 }
 
+p#logo{
+  font-family:'Kreon';
+  text-align: center;
+  color: rgba(138, 166, 185, .9);
+}
+
 p, div {
     font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
@@ -106,4 +112,8 @@ img{
 
 #search-button{
   text-align:center;
+}
+
+#today-weather{
+  text-align: center;
 }

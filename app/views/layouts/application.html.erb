@@ -43,13 +43,14 @@
       <li><a href="#">Blog</a></li>
     </ul>
 
+<% if @location %>
     <%= form_for(@location, :html => {:class=> "navbar-form navbar-right "}) do |f| %>
       <div class="field">
         <div class="form-group"><%= f.text_field :address, :class => 'form-control', :placeholder => 'search for storms' %>
         </div><%= f.submit "Storm?", class: "btn btn-primary" %>
       </div>
     <% end %>
-
+<% end %>
 
   </div><!-- /.navbar-collapse -->
 </nav>

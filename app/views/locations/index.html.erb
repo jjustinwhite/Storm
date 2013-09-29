@@ -1,14 +1,15 @@
 <h1>Listing locations</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Address</th>
       <th>Latitude</th>
       <th>Longitude</th>
+      <th>Street</th>
       <th>City</th>
-      <th></th>
-      <th></th>
+      <th>State</th>
+      <th>Country</th>
     </tr>
   </thead>
 
@@ -18,7 +19,10 @@
         <td><%= location.address %></td>
         <td><%= location.latitude %></td>
         <td><%= location.longitude %></td>
-        <td><%= location.longitude %></td>
+        <td><%= location.street %></td>
+        <td><%= location.city %></td>
+        <td><%= location.state %></td>
+        <td><%= location.country %></td>
         <td><%= link_to 'Show', location %></td>
         <td><%= link_to 'Edit', edit_location_path(location) %></td>
         <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Are you sure?' } %></td>

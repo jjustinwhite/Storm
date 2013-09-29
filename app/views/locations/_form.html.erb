@@ -1,6 +1,6 @@
 <div class="row"><div class="alert alert-dismissable alert-success col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
   <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-  <strong>Welcome!</strong> Where's the Storm is still in development right now. Feel free to poke around, and let us know what you think <a href="#" class="alert-link">here!</a>
+  <strong>Welcome!</strong> Where's the Storm is still in development right now. Feel free to poke around, and let us know what you think <a href="mailto:hello@wheresthestorm.com" class="alert-link">here!</a>
 </div></div>
 
 
@@ -20,11 +20,14 @@
 
   <div class="container col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
     <h1 id="logo">Where's the Storm?</h1>
-    <div class="row"><%= f.text_field :address, :class => 'form-control', :placeholder => 'search for storms' %></div>
+    <p id="logo" class="lead"><strong>We love storms...</strong></p>
+    <div class="row"><%= f.text_field :address, :class => 'form-control', :placeholder => 'search for storms '  %></div>
     <div class="row"><%= f.submit "Storm?", class: "btn btn-primary col-lg-12 col-md-12 col-sm-12 col-xs-12", id: "search-button" %></div>
   </div>
 
 
 </div>
 <% end %>
+
+<%= request.ip %>   
 

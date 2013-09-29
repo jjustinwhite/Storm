@@ -18,12 +18,13 @@
 <div class="row">
     <div class="jumbotron col-lg-6 col-md-6 col-sm-12 col-xs-12">
       <div class="container">
-        <h1>Today   <small><%=@daily_time[0]%></small></h1>
-        <div><p class="pull-right"><canvas id="icon0" width="123" height="123"></canvas></p></div>
-          <p><%=@hourly_summary %></p>
-          <p id="temp"> <strong><%=@daily_hightemp[0]%>°</strong> <small><%=@daily_lowtemp[0]%>°</small></p> 
-          <p><%=@daily_precip[0]%>% chance of precipitation</p>
+        <h1>Today   <small><%= @location.city %></small></h1>
+         <p id="temp"> <strong><%=@daily_hightemp[0]%>°</strong> <small><%=@daily_lowtemp[0]%>°</small></p> 
+        <div><p id="today-weather" class="pull-right"><strong><%=@daily_time[0]%><br /><strong><canvas id="icon0" width="123" height="123"></canvas></p></p></div>
+          <p><%=@daily_summary[0] %></p>
+          <p><%=@daily_precip[0]%>% chance of rain</p>
           <p><small><%=@daily_cloud[0]%>% cloud coverage</small></p>
+          <p>For the hour: <%=@hourly_summary %></p>
       </div>
     </div>
 
@@ -56,19 +57,19 @@
     <div class="row">
       <% case index+1 %>
       <% when 1 %>
-        <canvas id="icon1" width="123" height="123"></canvas>
+        <canvas id="icon1" width="100" height="100"></canvas>
       <% when 2 %>
-        <canvas id="icon2" width="123" height="123"></canvas>
+        <canvas id="icon2" width="100" height="100"></canvas>
       <% when 3 %>
-        <canvas id="icon3" width="123" height="123"></canvas>
+        <canvas id="icon3" width="100" height="100"></canvas>
       <% when 4 %>
-        <canvas id="icon4" width="123" height="123"></canvas>
+        <canvas id="icon4" width="100" height="100"></canvas>
       <% when 5 %>
-        <canvas id="icon5" width="123" height="123"></canvas>
+        <canvas id="icon5" width="100" height="100"></canvas>
       <% when 6 %>
-        <canvas id="icon6" width="123" height="123"></canvas>
+        <canvas id="icon6" width="100" height="100"></canvas>
       <% when 7 %>
-        <canvas id="icon7" width="123" height="123"></canvas>
+        <canvas id="icon7" width="100" height="100"></canvas>
       <% end %>
     </div>
   </div>
