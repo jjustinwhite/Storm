@@ -1,0 +1,130 @@
+/* Bootstrap Overide CSS */
+
+body {
+  height: 100%;
+  padding-top: 65px;
+  padding-bottom: 35px;
+}
+
+body{
+    background: url(image-path('storm.jpg')) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Coda', Georgia, Times, serif;
+    
+}
+
+h1#logo{
+  font-family:'Kreon';
+  font-size: 60px;
+  text-align: center;
+  color: rgba(138, 166, 185, .9);
+}
+
+p#logo{
+  font-family:'Kreon';
+  text-align: center;
+  color: rgba(138, 166, 185, .9);
+}
+
+p, div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+
+a.navbar-brand {
+  font-family:'Kreon';
+}
+
+div.container.well, div.jumbotron {
+  background: rgba(138, 166, 185, 0.95);
+} 
+
+.well {
+  background: rgba(138, 166, 185, .9);
+} 
+
+.container {
+  width: auto;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#weather-inline .weather-item {
+  display:inline-block;
+}
+
+.forecast {
+  text-align: center;
+}
+
+nav.navbar.navbar-default.navbar-fixed-bottom {
+  min-height: 30px;
+  max-height: 30px;
+}
+
+p.navbar-text#footer {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+p#temp{
+  font-size: 30px;
+}
+
+.container-forecast {
+  height: 325px;
+}
+
+#map-container {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+div.row.jumbotron{
+  height: 100%;
+  background-color: none;
+}
+
+#map
+{
+    width: 100%;
+    height: 100%;
+}
+
+img{
+   -moz-user-select: none;
+  -webkit-user-select: none;
+  /* this will work for QtWebKit in future */
+  -webkit-user-drag: none;
+}
+
+#search-button{
+  text-align:center;
+}
+
+#today-weather{
+  text-align: center;
+}
+
+@media(max-width:767px){
+  /* XS */
+}
+@media(min-width:768px){
+  /* SM */
+}
+@media(min-width:992px){
+  /* MD */
+}
+@media(min-width:1200px){
+  /* LG */
+}
